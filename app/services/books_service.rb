@@ -9,7 +9,7 @@ class BooksService
   def conn(query, quantity)
     Faraday.new(url: 'https://openlibrary.org/') do |faraday|
       faraday.params["q"] = query
-      faraday.params["quanity"] = quantity
+      faraday.params["limit"] = quantity
     end
   end
 end

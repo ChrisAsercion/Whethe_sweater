@@ -12,8 +12,8 @@ class Api::V1::BooksController < ApplicationController
     quantity = params[:quantity]
     book_facade = BooksFacade.new(location, quantity)
     books_data = book_facade.get_data
-    require 'pry'; binding.pry
+    
 
-    render json: BooksSerializer.(location_forecast, books_data)
+    render json: BooksSerializer.format_books_and_forecast(location_forecast, books_data)
   end
 end
