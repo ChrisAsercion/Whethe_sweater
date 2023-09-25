@@ -8,5 +8,8 @@ Rails.application.routes.draw do
       get 'forecast', to: 'forecasts#show'
       post 'users', to: 'users#create'
     end
+    namespace :v1 do
+      get 'book-search', to: 'books#show'
+    end
   end
 end
