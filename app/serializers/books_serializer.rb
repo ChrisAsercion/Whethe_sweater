@@ -13,7 +13,10 @@ class BooksSerializer
       "total_books_found": books[:numFound],
       "books": books[:docs].map do |b|
         {
-          "isbn":  b[:isbn], #|| b[:oclc] if the user wanted another idenifier
+          #isbn wasn't a listed attribute for some books (eg 4,5) so a or nil category was added. A clause statement could be added like the ones below
+          #if b[isbn] == nil => "oclc": b[:oclc]
+          #|| b[:oclc] if the frontend wanted a different idenifier to find books,but would be messy for 
+          "isbn":  b[:isbn], 
           "title": b[:title],
         }
       end

@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'API::V1::Books API' do
-  it '' do
+  it 'Finds a quantity of books about a certain location' do
     location = 'denver, CO'
     quantity = 5
 
@@ -9,7 +9,7 @@ describe 'API::V1::Books API' do
       'ACCEPT' => 'application/json',
       'CONTENT_TYPE' => 'application/json'
     }
-    #require 'pry'; binding.pry
+    
     book_forecast = JSON.parse(response.body, symbolize_names: true)
 
     expect(response).to have_http_status(:success)
