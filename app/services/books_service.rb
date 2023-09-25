@@ -1,15 +1,15 @@
 class BooksService
-  def books_by_query_and_quantity(query, quantity)
-    response = conn(query, quantity).get("search.json")
+  def books_by_query_and_quantity(books)
+    response = conn(books).get("search.json")
     
     JSON.parse(response.body, symbolize_names: true)
 
   end
 
-  def conn(query, quantity)
+  def conn(books)
     Faraday.new(url: 'https://openlibrary.org/') do |faraday|
-      faraday.params["q"] = query
-      faraday.params["limit"] = quantity
+      faraday.params["q"] = books.query
+      faraday.params["limit"] = books.quantity
     end
   end
 end

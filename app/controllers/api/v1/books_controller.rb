@@ -1,6 +1,6 @@
 class Api::V1::BooksController < ApplicationController
   def show
-    #require 'pry'; binding.pry
+
     location = params[:location]
     facade = LocationFacade.new(location)
     location_data = facade.mapquest_location
@@ -13,7 +13,6 @@ class Api::V1::BooksController < ApplicationController
     book_facade = BooksFacade.new(location, quantity)
     books_data = book_facade.get_data
     
-
     render json: BooksSerializer.format_books_and_forecast(location_forecast, books_data)
   end
 end

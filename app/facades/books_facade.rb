@@ -6,7 +6,7 @@ class BooksFacade
 
   def get_data
     service = BooksService.new
-
-    json = service.books_by_query_and_quantity(@query, @quantity)
+    books = Books.new(@query, @quantity)
+    json = service.books_by_query_and_quantity(books)
   end
 end
