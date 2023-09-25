@@ -15,7 +15,7 @@ class ForecastSerializer
             condition: forecast[:current][:condition][:text],
             icon: forecast[:current][:condition][:icon]
           },
-          daily_weather: forecast[:forecast][:forecastday].each do |d|
+          daily_weather: forecast[:forecast][:forecastday].map do |d|
             {
               date: d[:date],
               sunrise: d[:astro][:sunrise],
@@ -26,12 +26,12 @@ class ForecastSerializer
               icon: d[:day][:condition][:icon]
             }
           end,
-          hourly_weather: forecast[:forecast][:forecastday][0][:hour].each do |h|
+          hourly_weather: forecast[:forecast][:forecastday][0][:hour].map do |h|
             {
               time: h[:time][/\d{2}:\d{2}/],
               temperature: h[:temp_f],
               conditions: h[:condition][:text],
-              icon: ho[:condition][:icon]
+              icon: h[:condition][:icon]
             }
           end
         }

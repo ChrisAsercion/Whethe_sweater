@@ -8,7 +8,6 @@ class DummyService
 
   def conn(query)
     Faraday.new(url: 'https://openlibrary.org/') do |faraday|
-      faraday.params["key"] = Rails.application.credentials.weather_api[:weather_key]
       faraday.params["q"] = "Denver, CO"
       faraday.params["limit"] = 5
     end
