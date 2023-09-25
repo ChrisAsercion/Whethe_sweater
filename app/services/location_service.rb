@@ -3,7 +3,7 @@ class LocationService
     response = conn(query).get("/geocoding/v1/address")
     
     JSON.parse(response.body, symbolize_names: true)
-    #require 'pry'; binding.pry
+
   end
 
   def conn(query)
