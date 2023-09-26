@@ -1,5 +1,4 @@
-
-require 'rails_helper'
+'rails_helper'
 
 describe BooksFacade do
   let(:query) { 'Ruby Programming' }
