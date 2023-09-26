@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     namespace :v0 do
       get 'forecast', to: 'forecasts#show'
       post 'users', to: 'users#create'
+      post 'sessions', to: 'sessions#create'
+      post 'road_trip', to: 'roadtrips#show'
     end
     namespace :v1 do
       get 'book-search', to: 'books#show'
