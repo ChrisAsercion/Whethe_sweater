@@ -1,4 +1,13 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
+
+
+require 'vcr'
+
+VCR.configure do |config|
+  config.cassette_library_dir = 'spec/vcr_cassettes' # Specify the directory where cassettes will be stored
+  config.hook_into :webmock # Use WebMock as the HTTP stubbing library
+end
+
 require 'spec_helper'
 ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
