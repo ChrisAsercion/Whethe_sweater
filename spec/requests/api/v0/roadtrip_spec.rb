@@ -42,7 +42,7 @@ describe 'API::V0::Routes API' do
       expect(forecast[:data][:attributes][:weather_at_eta][:datetime]).to be_a(String)
 
       expect(forecast[:data][:attributes][:weather_at_eta]).to have_key(:temperature)
-      expect(forecast[:data][:attributes][:weather_at_eta][:temperature]).to be_a(String)
+      expect(forecast[:data][:attributes][:weather_at_eta][:temperature]).to be_a(Float)
 
       expect(forecast[:data][:attributes][:weather_at_eta]).to have_key(:condition)
       expect(forecast[:data][:attributes][:weather_at_eta][:condition]).to be_a(String)

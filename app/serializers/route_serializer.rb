@@ -10,7 +10,7 @@ class RouteSerializer
             "travel_time": travel_time,
             "weather_at_eta": {
                 "datetime": forecast[:time],
-                "temperature": forecast[:temp_f].to_s + " F",
+                "temperature": forecast[:temp_f],
                 "condition": forecast[:condition][:text]
             }
         }
