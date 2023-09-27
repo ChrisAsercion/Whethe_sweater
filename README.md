@@ -13,7 +13,7 @@ Things you may want to cover:
 * run `rails db:{drop,create,migrate}`
 
 * to run the test suite execute command `bundle exec rspec`
-* there should be 12 passing tests
+* there should be 14 passing tests
 
 * The goal of this application is to digest Api information about weather as well as map data to create json objects for a (possible) frontend team to display on their page. The two Api's used in this application are Mapquest for city and route information and WeatherApi for current and future weather predictions
 
